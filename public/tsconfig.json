@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es2015",
+      "es5",
+      "es6"
+    ],
+    "allowJs": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "rootDir": "./",
+    "outDir": "./dist/js/",
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true
+  },
+  "files": [
+    "app.ts",
+  ]
+}
