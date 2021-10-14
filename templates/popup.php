@@ -1,5 +1,5 @@
 <script>window.ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';</script>
-<div class="restringir-produto-por-cep" data-popup <?php if(WC()->customer->get_billing_postcode()): ?>style="display:none"<?php endif; ?>>
+<div class="restringir-produto-por-cep" data-popup <?php if (WC()->customer->get_billing_postcode()): ?>style="display:none"<?php endif; ?>>
   <div class="overlay"></div>
   <div class="box">
     <strong><?php echo __('Onde você está?', 'restringir-produto-por-cep'); ?></strong>

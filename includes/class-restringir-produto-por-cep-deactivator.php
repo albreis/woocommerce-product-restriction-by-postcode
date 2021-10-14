@@ -20,17 +20,17 @@
  * @subpackage Restringir_Produto_Por_Cep/includes
  * @author     ER Soluções Web LTDA <contato@ersolucoesweb.com.br>
  */
-class Restringir_Produto_Por_Cep_Deactivator {
+class Restringir_Produto_Por_Cep_Deactivator
+{
 
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function deactivate() {
-
-	}
-
+    /**
+     * Short Description. (use period)
+     *
+     * Long Description.
+     *
+     * @since    1.0.0
+     */
+    public static function deactivate()
+    {
+    }
 }
