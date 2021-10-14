@@ -1,4 +1,4 @@
-.product-restriction-by-postcode {
+.restringir-produto-por-cep {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999; }
-  .product-restriction-by-postcode .overlay {
+  .restringir-produto-por-cep .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@
     height: 100%;
     display: flex;
     z-index: 1; }
-  .product-restriction-by-postcode .box {
+  .restringir-produto-por-cep .box {
     position: relative;
     z-index: 2;
     padding: 30px;
@@ -27,22 +27,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; }
-    .product-restriction-by-postcode .box p {
+    .restringir-produto-por-cep .box p {
       margin: 0; }
-    .product-restriction-by-postcode .box span {
+    .restringir-produto-por-cep .box span {
       color: green; }
-    .product-restriction-by-postcode .box input {
+    .restringir-produto-por-cep .box input {
       margin-top: 15px;
       text-align: center; }
-      .product-restriction-by-postcode .box input:focus {
+      .restringir-produto-por-cep .box input:focus {
         outline: none; }
-  .product-restriction-by-postcode button {
+  .restringir-produto-por-cep button {
     display: none;
     margin-top: 15px;
     background: #000;
     color: #fff; }
 
-.product-restriction-by-postcode-alert {
+.restringir-produto-por-cep-alert {
   margin-top: 15px;
   background: #FCFBDA;
   padding: 15px;

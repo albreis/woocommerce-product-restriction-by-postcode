@@ -1,6 +1,6 @@
 
 class ProductRestrictionByPostcode {
-    public popup = document.querySelector('.product-restriction-by-postcode')
+    public popup = document.querySelector('.restringir-produto-por-cep')
     public input = this.popup.querySelector('input')
     public button = this.popup.querySelector('button')
     constructor() {

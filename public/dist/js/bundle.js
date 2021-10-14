@@ -2,7 +2,7 @@
 var ProductRestrictionByPostcode = (function () {
     function ProductRestrictionByPostcode() {
         var _this = this;
-        this.popup = document.querySelector('.product-restriction-by-postcode');
+        this.popup = document.querySelector('.restringir-produto-por-cep');
         this.input = this.popup.querySelector('input');
         this.button = this.popup.querySelector('button');
         var vue = document.createElement('script');
