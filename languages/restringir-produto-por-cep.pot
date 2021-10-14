@@ -1,0 +1,43 @@
+# Copyright (C) 2021 ER Soluções Web LTDA
+# This file is distributed under the same license as the Restringir produto por CEP plugin.
+msgid "Onde você está?"
+msgstr ""
+
+msgid "<strong>Atenção!</strong> Este produto não está disponível para entrega e por isso a calculadora de frete está desativada. <a href=\"#\" id=\"popupcep\">CLIQUE AQUI</a> para mudar o CEP."
+msgstr ""
+
+msgid "Dessa forma você terá acesso aos produtos e ofertas da sua região"
+msgstr ""
+
+msgid "Digite abaixo o seu CEP"
+msgstr ""
+
+msgid "Digite o CEP e pressione enter"
+msgstr ""
+
+msgid "Confirmar"
+msgstr ""
+
+msgid "O item %s não está disponível no seu CEP"
+msgstr ""
+
+msgid "Restrição por CEP"
+msgstr ""
+
+msgid "Faixas de CEP"
+msgstr ""
+
+msgid "Faixa de CEP"
+msgstr ""
+
+msgid "De"
+msgstr ""
+
+msgid "Até"
+msgstr ""
+
+msgid "CEPs específicos"
+msgstr ""
+
+msgid "CEP"
+msgstr ""

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "albreis/carbon-fields": "^3.3"
+    }
+}

@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Restringir produto por CEP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-14 23:12+0000\n"
+"PO-Revision-Date: 2021-10-14 23:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.4; wp-5.8.1"
+
+# Copyright (C) 2021 ER Soluções Web LTDA
+# This file is distributed under the same license as the Restringir produto por CEP plugin.
+msgid "Onde você está?"
+msgstr ""
+
+msgid ""
+"<strong>Atenção!</strong> Este produto não está disponível para entrega e "
+"por isso a calculadora de frete está desativada. <a href=\"#\" "
+"id=\"popupcep\">CLIQUE AQUI</a> para mudar o CEP."
+msgstr ""
+
+msgid "Dessa forma você terá acesso aos produtos e ofertas da sua região"
+msgstr ""
+
+msgid "Digite abaixo o seu CEP"
+msgstr ""
+
+msgid "Digite o CEP e pressione enter"
+msgstr ""
+
+msgid "Confirmar"
+msgstr ""
+
+msgid "O item %s não está disponível no seu CEP"
+msgstr ""
+
+msgid "Restrição por CEP"
+msgstr ""
+
+msgid "Faixas de CEP"
+msgstr ""
+
+msgid "Faixa de CEP"
+msgstr ""
+
+msgid "De"
+msgstr ""
+
+msgid "Até"
+msgstr ""
+
+msgid "CEPs específicos"
+msgstr ""
+
+msgid "CEP"
+msgstr ""

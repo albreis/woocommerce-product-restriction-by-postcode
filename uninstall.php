@@ -22,7 +22,7 @@
  * @link       https://ersolucoesweb.com.br
  * @since      1.0.0
  *
- * @package    Product_Restriction_By_Postcode
+ * @package    Restringir_Produto_Por_Cep
  */
 
 // If uninstall not called from WordPress, then exit.

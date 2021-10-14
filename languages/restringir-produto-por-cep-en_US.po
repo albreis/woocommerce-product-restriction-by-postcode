@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Restringir produto por CEP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-14 23:15+0000\n"
+"PO-Revision-Date: 2021-10-14 23:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.4; wp-5.8.1"
+
+# Copyright (C) 2021 ER Soluções Web LTDA
+# This file is distributed under the same license as the Restringir produto por CEP plugin.
+msgid "Onde você está?"
+msgstr "Where are you?"
+
+msgid ""
+"<strong>Atenção!</strong> Este produto não está disponível para entrega e "
+"por isso a calculadora de frete está desativada. <a href=\"#\" "
+"id=\"popupcep\">CLIQUE AQUI</a> para mudar o CEP."
+msgstr ""
+"<strong>Attention!</strong> This produt is not available for shipping in "
+"your postcode <a href=\"#\" id=\"popupcep\">CLICK HERE</a> to change your "
+"postcode."
+
+msgid "Dessa forma você terá acesso aos produtos e ofertas da sua região"
+msgstr "For gain access for products in your region"
+
+msgid "Digite abaixo o seu CEP"
+msgstr "Enter your postcode below"
+
+msgid "Digite o CEP e pressione enter"
+msgstr "Tip the postcode and press enter"
+
+msgid "Confirmar"
+msgstr "Confirm"
+
+msgid "O item %s não está disponível no seu CEP"
+msgstr "The %s item not is available"
+
+msgid "Restrição por CEP"
+msgstr "Restriction by Postcode"
+
+msgid "Faixas de CEP"
+msgstr "Postcode ranges"
+
+msgid "Faixa de CEP"
+msgstr "Postcode range"
+
+msgid "De"
+msgstr "From"
+
+msgid "Até"
+msgstr "To"
+
+msgid "CEPs específicos"
+msgstr "Especific postcodes"
+
+msgid "CEP"
+msgstr "Postcode"
