@@ -5,7 +5,7 @@
     <strong>Onde você está?</strong>
     <p>Dessa forma você terá acesso aos produtos e ofertas da sua região</p>
     <span>Digite abaixo o seu CEP</span>
-    <input maxlength="8" type="text" name="postcode" placeholder="Digite o CEP e pressione enter">
+    <input maxlength="9" inputmode="numeric" pattern="[\d]{8}-[\d]{3}" type="text" name="postcode" placeholder="Digite o CEP e pressione enter">
     <button>Confirmar</button>
   </div>
 </div>

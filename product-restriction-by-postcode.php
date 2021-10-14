@@ -76,39 +76,30 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-product-restriction-by-pos
  * @since    1.0.0
  */
 
-session_start();
-// if(isset($_SESSION['product_restriction_by_postcode'])) {
-// 	unset($_SESSION['product_restriction_by_postcode']);
-// }
 function product_restriction_by_postcode_save_postcode() {
-	$data = json_decode(file_get_contents('php://input'));
-	$_SESSION['product_restriction_by_postcode'] = $data->postcode;
+    $data = json_decode(file_get_contents('php://input'));
+    $data->postcode = preg_replace('/[^\d]+/i', '', $data->postcode);
 	WC()->customer->set_shipping_postcode(wc_clean($data->postcode));
 	WC()->customer->set_billing_postcode(wc_clean($data->postcode));
 	wp_send_json( $data );
 }
 function run_product_restriction_by_postcode() {
-
 	$plugin = new Product_Restriction_By_Postcode();
-
 	add_action('wp_footer', function(){
 		include 'templates/popup.php';
 	});
-
 	add_action('wp_ajax_nopriv_save_postcode', 'product_restriction_by_postcode_save_postcode');
 	add_action('wp_ajax_save_postcode', 'product_restriction_by_postcode_save_postcode');
-
-
 	add_action('wp', function(){
 		global $wpdb, $post;
 		if(is_product()) {
-			if(isset($_SESSION['product_restriction_by_postcode'])) {
-				$postcode = (int)$_SESSION['product_restriction_by_postcode'];
-				$sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$post->ID}' AND meta_key LIKE 'faixas_de_cep_%_de' AND {$postcode} >= meta_value AND meta_value != '' AND meta_value IS NOT NULL";
+            $postcode = WC()->customer->get_billing_postcode();
+			if($postcode) {
+				$sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$post->ID}' AND meta_key LIKE 'faixas_de_cep_%_de' AND {$postcode} >= REPLACE(meta_value, '-', '') AND meta_value != '' AND meta_value IS NOT NULL";
 				$de = $wpdb->get_col($sql);
-				$sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$post->ID}' AND meta_key LIKE 'faixas_de_cep_%_ate' AND {$postcode} <= meta_value AND meta_value != '' AND meta_value IS NOT NULL";
+				$sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$post->ID}' AND meta_key LIKE 'faixas_de_cep_%_ate' AND {$postcode} <= REPLACE(meta_value, '-', '') AND meta_value != '' AND meta_value IS NOT NULL";
 				$ate = $wpdb->get_col($sql);
-				$sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$post->ID}' AND meta_key LIKE 'ceps_especificos_%_cep' AND {$postcode} = meta_value AND meta_value != '' AND meta_value IS NOT NULL";
+				$sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$post->ID}' AND meta_key LIKE 'ceps_especificos_%_cep' AND {$postcode} = REPLACE(meta_value, '-', '') AND meta_value != '' AND meta_value IS NOT NULL";
 				$cep = $wpdb->get_col($sql);
 				$restricted = (count($de) && count($ate)) || count($cep);
 				if($restricted) {
@@ -120,10 +111,34 @@ function run_product_restriction_by_postcode() {
 				}
 			}
 		}
-	} );
-
-
+    } );
+    add_filter('woocommerce_calculated_shipping', function(){
+	    WC()->customer->set_billing_postcode(wc_clean($_POST['calc_shipping_postcode']));
+	    WC()->customer->set_shipping_postcode(wc_clean($_POST['calc_shipping_postcode']));
+    }, 10, 2);
+    add_action( 'woocommerce_check_cart_items', function () {
+        global $wpdb;
+        $items = WC()->cart->get_cart();
+        if (count($items)) {
+            $postcode = WC()->customer->get_billing_postcode();
+            foreach ($items as $item) {
+                $postcode = preg_replace('/[^\d]+/i', '', $postcode);
+                if ($postcode) {
+                    $sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$item['product_id']}' AND meta_key LIKE 'faixas_de_cep_%_de' AND {$postcode} >= REPLACE(meta_value, '-', '') AND meta_value != '' AND meta_value IS NOT NULL";
+                    $de = $wpdb->get_col($sql);
+                    $sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$item['product_id']}' AND meta_key LIKE 'faixas_de_cep_%_ate' AND {$postcode} <= REPLACE(meta_value, '-', '') AND meta_value != '' AND meta_value IS NOT NULL";
+                    $ate = $wpdb->get_col($sql);
+                    $sql = "SELECT meta_value FROM {$wpdb->postmeta} WHERE post_id = '{$item['product_id']}' AND meta_key LIKE 'ceps_especificos_%_cep' AND {$postcode} = REPLACE(meta_value, '-', '') AND meta_value != '' AND meta_value IS NOT NULL";
+                    $cep = $wpdb->get_col($sql);
+                    $restricted = (count($de) && count($ate)) || count($cep);
+                    if ($restricted) {
+                        remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
+                        wc_add_notice( __("O item {$item['data']->get_title()} não está disponível no seu CEP", "woocommerce" ), 'error' );
+                    }
+                }
+            }
+        }
+    } );
 	$plugin->run();
-
 }
 run_product_restriction_by_postcode();
